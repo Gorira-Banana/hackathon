@@ -10,6 +10,10 @@ function mouseover(t){
 	}
 }
 
+function mousemove($event){
+	TF.innerHTML="判定中"
+}
+
 function mouseout(){
 	var i;
 	var flag=0;
