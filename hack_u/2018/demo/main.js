@@ -14,48 +14,38 @@ $(function(){
 	var array1=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 	console.log(array1[0][0]);
 	while(length!=0){
+		console.log(array1[0]);
+		console.log(array1[1]);
+		console.log(array1[2]);
+		console.log(array1[3]);
+		console.log(array1[4]);
+		console.log(length);
+		console.log(curX);
+		console.log(curY);
+		console.log("----------------");
 		if(length>3){
-			console.log(array1[0]);
-			console.log(array1[1]);
-			console.log(array1[2]);
-			console.log(array1[3]);
-			console.log(array1[4]);
-			console.log(length);
-			console.log("----------------");
 			rand=Math.floor(Math.random()*4);
 			if(rand==0){
 				if(curX>0){
-					array1[curY][curX]=array1[curY][curX]+1;
-					if(array1[curY][curX]>=weight){
-						array1[curY][curX]=0;
-					}
+					array1=ArrayCal(array1,curX,curY,weight);
 					curX=curX-1;
 					length=length-1;
 				}
 			}else if(rand==1){
 				if(curX<4){
-					array1[curY][curX]=array1[curY][curX]+1;
-					if(array1[curY][curX]>=weight){
-						array1[curY][curX]=0;
-					}
+					array1=ArrayCal(array1,curX,curY,weight);
 					curX=curX+1;
 					length=length-1;
 				}
 			}else if(rand==2){
 				if(curY>0){
-					array1[curY][curX]=array1[curY][curX]+1;
-					if(array1[curY][curX]>=weight){
-						array1[curY][curX]=0;
-					}
+					array1=ArrayCal(array1,curX,curY,weight);
 					curY=curY-1;
 					length=length-1;
 				}
 			}else if(rand==3){
 				if(curY<4){
-					array1[curY][curX]=array1[curY][curX]+1;
-					if(array1[curY][curX]>=weight){
-						array1[curY][curX]=0;
-					}
+					array1=ArrayCal(array1,curX,curY,weight);
 					curY=curY+1;
 					length=length-1;
 				}
@@ -78,202 +68,471 @@ $(function(){
 					rand=Math.floor(Math.random()*2);
 					if(rand==0){
 						
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						array1=ArrayCal(array1,curX,curY,weight);
 						curX=curX-1;
 						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						
+						array1=ArrayCal(array1,curX,curY,weight);
 						curX=curX-1;
 						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						
+						array1=ArrayCal(array1,curX,curY,weight);
 						curX=curX-1;
 						length=length-1;
+						
 					}else if(rand==1){
 						
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						array1=ArrayCal(array1,curX,curY,weight);
 						curX=curX+1;
 						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						
+						array1=ArrayCal(array1,curX,curY,weight);
 						curX=curX+1;
 						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						
+						array1=ArrayCal(array1,curX,curY,weight);
 						curX=curX+1;
 						length=length-1;
 					}
-					//以下単純
 				}else if(X==1){
-					if(curX==2){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
+					rand=Math.floor(Math.random()*2);
+					if(rand==0){
+						if(curX==1){
+							
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curY>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curY<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}
+							}
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX-1;
+							length=length-1;
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX-1;
+							length=length-1;
+							
+							
+						}else if(curX==3){
+							
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curY>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curY<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}
+							}
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX+1;
+							length=length-1;
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX+1;
+							length=length-1;
+							
 						}
-						curX=curX-1;
-						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
+					}else if(rand==1){
+						if(curX==1){
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX-1;
+							length=length-1;
+							
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curY>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curY<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}
+							}
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX-1;
+							length=length-1;
+							
+						}else if(curX==3){
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX+1;
+							length=length-1;
+							
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curY>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curY<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curY=curY-1;
+									length=length-1;
+								}
+							}
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curX=curX+1;
+							length=length-1;
 						}
-						curX=curX-1;
-						length=length-1;
-					}else if(curX==4){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curX=curX+1;
-						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curX=curX+1;
-						length=length-1;
-					}
-					if(curY>0){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curY=curY-1;
-						length=length-1;
-					}else{
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curY=curY+1;
-						length=length-1;
 					}
 				}
-			}else{
+			}else if(Y>X){
 				if(Y==2){
-					array1[curY][curX]=array1[curY][curX]+1;
-					if(array1[curY][curX]>=weight){
-						array1[curY][curX]=0;
+					rand=Math.floor(Math.random()*2);
+					if(rand==0){
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
+						length=length-1;
+						
+					}else if(rand==1){
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY+1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY+1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY+1;
+						length=length-1;
 					}
-					curY=curY+1;
-					length=length-1;
-					array1[curY][curX]=array1[curY][curX]+1;
-					if(array1[curY][curX]>=weight){
-						array1[curY][curX]=0;
-					}
-					curY=curY+1;
-					length=length-1;
-					array1[curY][curX]=array1[curY][curX]+1;
-					if(array1[curY][curX]>=weight){
-						array1[curY][curX]=0;
-					}
-					curY=curY+1;
-					length=length-1;
 				}else if(Y==1){
-					if(curY==1){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
+					rand=Math.floor(Math.random()*2);
+					if(rand==0){
+						if(curY==1){
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curX>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curX<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}
+							}
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY-1;
+							length=length-1;
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY-1;
+							length=length-1;
+							
+						}else if(curY==3){
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curX>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curX<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}
+							}
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY+1;
+							length=length-1;
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY+1;
+							length=length-1;
 						}
-						curY=curY-1;
+					}else if(rand==1){
+						if(curY==1){
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY-1;
+							length=length-1;
+							
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curX>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curX<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}
+							}
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY-1;
+							length=length-1;
+							
+						}else if(curY==3){
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY+1;
+							length=length-1;
+							
+							rand=Math.floor(Math.random()*2);
+							if(rand==0){
+								if(curX>0){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}
+							}else if(rand==1){
+								if(curX<4){
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX+1;
+									length=length-1;
+								}else{
+									array1=ArrayCal(array1,curX,curY,weight);
+									curX=curX-1;
+									length=length-1;
+								}
+							}
+							
+							array1=ArrayCal(array1,curX,curY,weight);
+							curY=curY+1;
+							length=length-1;
+							
+						}
+					}
+				}
+				//以下単純
+			}else{
+				if(X==2){
+					rand=Math.floor(Math.random()*4);
+					if(rand==0){
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX+1;
 						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curY=curY-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX+1;
 						length=length-1;
-					}else if(curY==3){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX+1;
+						length=length-1;
+					}else if(rand==1){
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX-1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX-1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX-1;
+						length=length-1;
+					}else if(rand==2){
+						array1=ArrayCal(array1,curX,curY,weight);
 						curY=curY+1;
 						length=length-1;
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						
+						array1=ArrayCal(array1,curX,curY,weight);
 						curY=curY+1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY+1;
+						length=length-1;
+					}else if(rand==3){
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
 						length=length-1;
 					}
-					if(curX>0){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+				}else if(X==1){
+					if(curX==1){
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX-1;
+						length=length-1;
+						
+						console.log(array1[0]);
+						console.log(array1[1]);
+						console.log(array1[2]);
+						console.log(array1[3]);
+						console.log(array1[4]);
+						console.log("X=1--------------");
+						
+						array1=ArrayCal(array1,curX,curY,weight);
 						curX=curX-1;
 						length=length-1;
 					}else{
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curX=curX+1;
-						length=length-1;
-					}
-				}else if(Y==0){
-					if(curX>0){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curX=curX-1;
-						length=length-1;
-					}else{
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curX=curX+1;
-						length=length-1;
-					}
-					if(curX>0){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curX=curX-1;
-						length=length-1;
-					}else{
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curX=curX+1;
-						length=length-1;
-					}
-					if(curY==0){
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
-						curY=curY-1;
-						length=length-1;
-					}else{
-						array1[curY][curX]=array1[curY][curX]+1;
-						if(array1[curY][curX]>=weight){
-							array1[curY][curX]=0;
-						}
+						array1=ArrayCal(array1,curX,curY,weight);
 						curY=curY+1;
+						length=length-1;
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX+1;
+						length=length-1;
+						
+						console.log(array1[0]);
+						console.log(array1[1]);
+						console.log(array1[2]);
+						console.log(array1[3]);
+						console.log(array1[4]);
+						console.log("X=1--------------");
+						
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX+1;
+						length=length-1;
+					}
+				}else if(X==0){
+					if(curX>0){
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX-1;
+						length=length-1;
+					}else{
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX+1;
+						length=length-1;
+					}
+					
+					if(curX>0){
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX-1;
+						length=length-1;
+					}else{
+						array1=ArrayCal(array1,curX,curY,weight);
+						curX=curX+1;
+						length=length-1;
+					}
+					
+					console.log(array1[0]);
+					console.log(array1[1]);
+					console.log(array1[2]);
+					console.log(array1[3]);
+					console.log(array1[4]);
+					console.log("X=0--------------");
+					
+					if(curY>0){
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY+1;
+						length=length-1;
+					}else{
+						array1=ArrayCal(array1,curX,curY,weight);
+						curY=curY-1;
 						length=length-1;
 					}
 				}
 			}
-			length=0;
+			if(length==3){
+				console.log("break");
+				break;
+			}
 		}
 	}
 	console.log(array1[0]);
