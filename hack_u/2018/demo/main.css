@@ -46,6 +46,7 @@ table {
 	height: 100%;
 	border: 1;
 	border-color: #000000;
+	border-collapse: collapse;
 }
 
 #Answer{

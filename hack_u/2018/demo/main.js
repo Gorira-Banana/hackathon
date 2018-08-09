@@ -28,6 +28,7 @@ function mouseout(){
 		
 		if(flag==0){
 			TF.innerHTML="True";
+			window.alert("一筆書き終了です");
 		}else{
 			TF.innerHTML="False";
 		}
