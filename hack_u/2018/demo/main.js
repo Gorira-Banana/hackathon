@@ -1,7 +1,6 @@
 function mouseover(t){
 	var id_v;
 	id_v=t.id;
-	console.log(id_v);
 	var color=$('#'+id_v).css('background-color');
 	if(color=="rgb(187, 187, 204)"){
 		$('#'+id_v).css('background-color','#aaccaa');
@@ -10,28 +9,329 @@ function mouseover(t){
 	}
 }
 
-function mousemove($event){
-	TF.innerHTML="判定中"
-}
-
-function mouseout(){
-	var i;
-	var flag=0;
-	for(i=1;i<=25;i++){
-		if($('#p'+i).css('background-color')==$('#a'+i).css('background-color')){
-			
+$(function(){
+	var i,j,rand,curX=0,curY=0,length=8,weight=2,X,Y,count=1;
+	var array1=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
+	console.log(array1[0][0]);
+	while(length!=0){
+		if(length>3){
+			console.log(array1[0]);
+			console.log(array1[1]);
+			console.log(array1[2]);
+			console.log(array1[3]);
+			console.log(array1[4]);
+			console.log(length);
+			console.log("----------------");
+			rand=Math.floor(Math.random()*4);
+			if(rand==0){
+				if(curX>0){
+					array1[curY][curX]=array1[curY][curX]+1;
+					if(array1[curY][curX]>=weight){
+						array1[curY][curX]=0;
+					}
+					curX=curX-1;
+					length=length-1;
+				}
+			}else if(rand==1){
+				if(curX<4){
+					array1[curY][curX]=array1[curY][curX]+1;
+					if(array1[curY][curX]>=weight){
+						array1[curY][curX]=0;
+					}
+					curX=curX+1;
+					length=length-1;
+				}
+			}else if(rand==2){
+				if(curY>0){
+					array1[curY][curX]=array1[curY][curX]+1;
+					if(array1[curY][curX]>=weight){
+						array1[curY][curX]=0;
+					}
+					curY=curY-1;
+					length=length-1;
+				}
+			}else if(rand==3){
+				if(curY<4){
+					array1[curY][curX]=array1[curY][curX]+1;
+					if(array1[curY][curX]>=weight){
+						array1[curY][curX]=0;
+					}
+					curY=curY+1;
+					length=length-1;
+				}
+			}
 		}else{
-			flag=1;
-		}
-		
-		console.log(flag);
-		
-		if(flag==0){
-			TF.innerHTML="True";
-			window.alert("一筆書き終了です");
-		}else{
-			TF.innerHTML="False";
+			X=curX;
+			Y=curY;
+			if(X==3){
+				X=1;
+			}else if(X==4){
+				X=0;
+			}
+			if(Y==3){
+				Y=1;
+			}else if(Y==4){
+				Y=0;
+			}
+			if(X>Y){
+				if(X==2){
+					rand=Math.floor(Math.random()*2);
+					if(rand==0){
+						
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+					}else if(rand==1){
+						
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+					}
+					//以下単純
+				}else if(X==1){
+					if(curX==2){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+					}else if(curX==4){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+					}
+					if(curY>0){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY-1;
+						length=length-1;
+					}else{
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY+1;
+						length=length-1;
+					}
+				}
+			}else{
+				if(Y==2){
+					array1[curY][curX]=array1[curY][curX]+1;
+					if(array1[curY][curX]>=weight){
+						array1[curY][curX]=0;
+					}
+					curY=curY+1;
+					length=length-1;
+					array1[curY][curX]=array1[curY][curX]+1;
+					if(array1[curY][curX]>=weight){
+						array1[curY][curX]=0;
+					}
+					curY=curY+1;
+					length=length-1;
+					array1[curY][curX]=array1[curY][curX]+1;
+					if(array1[curY][curX]>=weight){
+						array1[curY][curX]=0;
+					}
+					curY=curY+1;
+					length=length-1;
+				}else if(Y==1){
+					if(curY==1){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY-1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY-1;
+						length=length-1;
+					}else if(curY==3){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY+1;
+						length=length-1;
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY+1;
+						length=length-1;
+					}
+					if(curX>0){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+					}else{
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+					}
+				}else if(Y==0){
+					if(curX>0){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+					}else{
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+					}
+					if(curX>0){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX-1;
+						length=length-1;
+					}else{
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curX=curX+1;
+						length=length-1;
+					}
+					if(curY==0){
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY-1;
+						length=length-1;
+					}else{
+						array1[curY][curX]=array1[curY][curX]+1;
+						if(array1[curY][curX]>=weight){
+							array1[curY][curX]=0;
+						}
+						curY=curY+1;
+						length=length-1;
+					}
+				}
+			}
+			length=0;
 		}
 	}
+	console.log(array1[0]);
+	console.log(array1[1]);
+	console.log(array1[2]);
+	console.log(array1[3]);
+	console.log(array1[4]);
+	
+	for(i=0;i<5;i++){
+		for(j=0;j<5;j++){
+			if(array1[i][j]==1){
+				$('#a'+count).css('background-color','#aaccaa');
+			}else{
+				$('#a'+count).css('background-color','#bbbbcc');
+			}
+			count++;
+		}
+	}
+	
+	
+});
+
+function ArrayCal(array,X,Y,weight){
+	array[Y][X]=array[Y][X]+1;
+	if(array[Y][X]>=weight){
+		array[Y][X]=0;
+	}
+	return array;
 }
+
+
+
+$(function(){
+	$('#PlayerPaz').hover(
+		function(e){
+			TF.innerHTML="判定中"
+		},
+		function(e){
+			var i;
+			var flag=0;
+			for(i=1;i<=25;i++){
+				if($('#p'+i).css('background-color')==$('#a'+i).css('background-color')){
+					
+				}else{
+					flag=1;
+				}
+				
+			}
+			
+			console.log(flag);
+			
+			if(flag==0){
+				TF.innerHTML="True";
+			}else if(flag==1){
+				TF.innerHTML="False";
+			}
+			//window.alert("一筆書き終了です");
+		}
+	);
+});
 
