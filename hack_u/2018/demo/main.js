@@ -9,7 +9,7 @@ function mouseover(t){
 	}
 }
 
-$(function(){
+$(function(){//あんまよろしくなかった　by gorira-banana
 	var i,j,rand,curX=0,curY=0,length=8,weight=2,X,Y,count=1;
 	var array1=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 	console.log(array1[0][0]);
