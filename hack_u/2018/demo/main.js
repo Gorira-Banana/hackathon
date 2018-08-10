@@ -586,10 +586,21 @@ $(function(){
 			
 			if(flag==0){
 				TF.innerHTML="True";
+				if(window.confirm("一筆書き終了！\nお見事！正解です！\nもう一度遊びますか？")){
+					location.href = "main.html";
+				}
+				else{
+					window.alert("キャンセルされました")
+				}
 			}else if(flag==1){
 				TF.innerHTML="False";
+				if(window.confirm("一筆書き終了！\n残念！失敗です！\nもう一度遊びますか？")){
+					location.href = "main.html";
+				}
+				else{
+					window.alert("キャンセルされました")
+				}
 			}
-			//window.alert("一筆書き終了です");
 		}
 	);
 });
