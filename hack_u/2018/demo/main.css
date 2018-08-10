@@ -1,7 +1,58 @@
 #Main{
+	font-size: 2vw;
 	width: 100%;
 	height: 100%;
 	position: fixed;
+	top: 0;
+	left: 0;
+	color: #fff;
+    background: linear-gradient(-45deg, #ee7742, #e63c7e, #32a6d6, #23d5aa);
+    background-size: 400% 400%;
+	animation: Gradient 15s ease infinite;
+	z-index: -1;
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+#headerleft{
+	width: 80%;
+	height: 20%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#headerright{
+	width: 20%;
+	height: 20%;
+	position: absolute;
+	top: 0;
+	left: 80%;
+	z-index: 3;
+}
+
+#button{
+	width: 50%;
+	height: 30%;
+	position: absolute;
+	top: 50%;
+	left:0;
+	font-size: 1vw;
+}
+
+#title{
+	height: 100%;
+	position: absolute;
 	top: 0;
 	left: 0;
 }
@@ -10,12 +61,11 @@
 	width: 100%;
 	height: 80%;
 	position: absolute;
-	top: 10%;
+	top: 20%;
 	left: 0;
 }
 
 #MainLEFT{
-	background-color: #eeeeee;
 	width: 50%;
 	height: 100%;
 	position: absolute;
@@ -24,7 +74,6 @@
 }
 
 #MainRIGHT{
-	background-color: #ffffaa;
 	width: 50%;
 	height: 100%;
 	position: absolute;
@@ -32,14 +81,14 @@
 	left: 50%;
 }
 
-#footer{
+/*#footer{
 	background-color: #ccffaa;
 	width: 100%;
 	height: 10%;
 	position: absolute;
 	top: 90%;
 	left: 0;
-}
+}*/
 
 .Mjudge {
 	width: 65%;

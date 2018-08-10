@@ -10,19 +10,23 @@
 	
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-	<script src="js/brython.js"></script>
-	<script src="js/brython_stdlib.js"></script>
+	<!--<script src="js/brython.js"></script>
+	<script src="js/brython_stdlib.js"></script>-->
 	<script src="main.js"></script>
 	
 </head>
-<body onload="brython()">
-<script type="text/python" src="main.py"></script>
+<body> <!--onload="brython()"-->
+<!--<script type="text/python" src="main.py"></script>-->
+<div id="headerleft">
+	<img src="PazTitle.png" id="title">
+</div>
+<div id="headerright">
+	<input type="button" value="見やすくする" id="button" onclick="ColorChange()">
+</div>
 <div id="Main">
 	<div id="Pazzle">
 	<div id="MainLEFT">
-		left
-		<br>
-		TF:<span id="TF"></span>
+		<span id="TF"></span>
 		<div class="Mjudge" id="PlayerPaz">
 		<table class="Paz">
 		<tr>
@@ -89,7 +93,8 @@
 		</div>
 	</div>
 	<div id="MainRIGHT">
-		right
+		通るマスの数：
+		<span id="len"></span>
 		<div class="Mjudge">
 		<table class="Paz">
 		<tr>
@@ -156,12 +161,12 @@
 		</div>
 	</div>
 	</div>
-	<div id="footer">
+	<!--<div id="footer">
 		<input type="text" id="Sentence">
 		<button id="Call">決定</button>
 		<br>
 		<span id="Response"></span>
-	</div>
+	</div>-->
 </div>
 </body>
 </html>

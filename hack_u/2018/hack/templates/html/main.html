@@ -1,0 +1,173 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>hack</title>
+	
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	
+	<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+	<script src="{% static 'js/jquery-ui-1.10.3.custom.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<!--<script src="js/brython.js"></script>
+	<script src="js/brython_stdlib.js"></script>-->
+	
+</head>
+<body> <!--onload="brython()"-->
+<!--<script type="text/python" src="main.py"></script>-->
+<div id="headerleft">
+	<img src="{% static 'img/PazTitle.png' %}" id="title"/>
+</div>
+<div id="headerright">
+	<input type="button" value="見やすくする" id="button" onclick="ColorChange()">
+</div>
+<div id="Main">
+	<div id="Pazzle">
+	<div id="MainLEFT">
+		<span id="TF"></span>
+		<div class="Mjudge" id="PlayerPaz">
+		<table class="Paz">
+		<tr>
+			<td class="Squares" id="p1" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p2" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p3" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p4" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p5" onmouseover="mouseover(this);">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="p6" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p7" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p8" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p9" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p10" onmouseover="mouseover(this);">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="p11" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p12" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p13" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p14" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p15" onmouseover="mouseover(this);">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="p16" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p17" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p18" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p19" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p20" onmouseover="mouseover(this);">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="p21" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p22" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p23" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p24" onmouseover="mouseover(this);">
+			</td>
+			<td class="Squares" id="p25" onmouseover="mouseover(this);">
+			</td>
+		</tr>
+		</table>
+		</div>
+	</div>
+	<div id="MainRIGHT">
+		通るマスの数：
+		<span id="len"></span>
+		<div class="Mjudge">
+		<table class="Paz">
+		<tr>
+			<td class="Squares" id="a1">
+			</td>
+			<td class="Squares" id="a2">
+			</td>
+			<td class="Squares" id="a3">
+			</td>
+			<td class="Squares" id="a4">
+			</td>
+			<td class="Squares" id="a5">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="a6">
+			</td>
+			<td class="Squares" id="a7">
+			</td>
+			<td class="Squares" id="a8">
+			</td>
+			<td class="Squares" id="a9">
+			</td>
+			<td class="Squares" id="a10">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="a11">
+			</td>
+			<td class="Squares" id="a12">
+			</td>
+			<td class="Squares" id="a13">
+			</td>
+			<td class="Squares" id="a14">
+			</td>
+			<td class="Squares" id="a15">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="a16">
+			</td>
+			<td class="Squares" id="a17">
+			</td>
+			<td class="Squares" id="a18">
+			</td>
+			<td class="Squares" id="a19">
+			</td>
+			<td class="Squares" id="a20">
+			</td>
+		</tr>
+		<tr>
+			<td class="Squares" id="a21">
+			</td>
+			<td class="Squares" id="a22">
+			</td>
+			<td class="Squares" id="a23">
+			</td>
+			<td class="Squares" id="a24">
+			</td>
+			<td class="Squares" id="a25">
+			</td>
+		</tr>
+		</table>
+		</div>
+	</div>
+	</div>
+	<!--<div id="footer">
+		<input type="text" id="Sentence">
+		<button id="Call">決定</button>
+		<br>
+		<span id="Response"></span>
+	</div>-->
+</div>
+</body>
+</html>
