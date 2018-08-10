@@ -5,8 +5,8 @@ var Green;
 var Blue;
 var Lock=0;
 var nand=8;
+var InitArray=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 var ansArray;
-var InitArray;
 
 function mouseover(t){
 	if(Lock==0){
@@ -597,7 +597,7 @@ $(function(){//あんまよろしくなかった　by gorira-banana
 		var R,L;
 		var array1=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 		console.log(array1[0][0]);
-		InitArray=array1;
+		InitArray==[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 		
 		len.innerHTML=length;
 		
