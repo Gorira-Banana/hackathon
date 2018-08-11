@@ -5,6 +5,7 @@ var Green;
 var Blue;
 var Lock=0;
 var nand=8;
+var Flag5=0;
 var InitArray=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 var ansArray;
 
@@ -33,6 +34,7 @@ $(function(){//あんまよろしくなかった　by gorira-banana
 		var array2=[[0,1,0,1,0],[1,0,0,1,0],[0,1,0,0,0],[0,1,1,0,1],[0,0,0,0,1]];
 		console.log(array1[0][0]);
 		InitArray=array2;
+		Flag5=1;
 		
 		len.innerHTML=length;
 		
@@ -1237,8 +1239,12 @@ $(function(){
 					}
 				}else if(flag==1){
 					TF.innerHTML="もう一回";
-					if(window.confirm("一筆書き終了！\n残念！失敗です！\nもう一度同じパズルで遊びますか？")){
-						Init();
+					if(window.confirm("一筆書き終了！\n残念！失敗です！\nもう一度同じパズルで遊びますか？(高難度の場合はリセット)")){
+						if(Flag5==1){
+							location.href = "main.html";
+						}else{
+							Init();
+						}
 					}
 					else{
 						location.href = "main.html";
